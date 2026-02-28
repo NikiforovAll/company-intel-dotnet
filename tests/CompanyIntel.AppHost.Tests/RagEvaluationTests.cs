@@ -30,7 +30,6 @@ public class RagEvaluationTests(AspireAppFixture fixture, ITestOutputHelper outp
         content.Add(new StreamContent(fileStream), "file", "contoso-corp.pdf");
 #pragma warning restore CA2000 // Dispose objects before losing scope
 
-
         var response = await fixture.ApiClient.PostAsync("/api/ingest", content, cts.Token);
         response.EnsureSuccessStatusCode();
 
