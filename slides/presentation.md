@@ -392,6 +392,12 @@ app.MapAGUI("/", chatAgent);
 
 ---
 
+<style scoped>
+section {
+  font-size: 28px;
+}
+</style>
+
 ![bg fit](./img/bg-slide-alt2.png)
 
 # AppHost — Full Stack Orchestration
@@ -452,6 +458,12 @@ section {
 | **Retrieval** | Did we find the right chunks? |
 
 ---
+
+<style scoped>
+section {
+  font-size: 30px;
+}
+</style>
 
 ![bg fit](./img/bg-slide-alt2.png)
 
