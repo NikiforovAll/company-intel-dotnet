@@ -18,7 +18,10 @@
       Version="1.72.0-preview"
     />
     <PackageReference Include="OllamaSharp" Version="5.4.18" />
-    <PackageReference Include="CommunityToolkit.Aspire.Microsoft.EntityFrameworkCore.Sqlite" Version="13.1.2-beta.518" />
+    <PackageReference
+      Include="CommunityToolkit.Aspire.Microsoft.EntityFrameworkCore.Sqlite"
+      Version="13.1.2-beta.518"
+    />
     <PackageReference Include="PdfPig" Version="0.1.13" />
   </ItemGroup>
 </Project>
