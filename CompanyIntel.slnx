@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CompanyIntel.AppHost/CompanyIntel.AppHost.csproj" />
+    <Project Path="src/CompanyIntel.ServiceDefaults/CompanyIntel.ServiceDefaults.csproj" />
+    <Project Path="src/CompanyIntel.Api/CompanyIntel.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CompanyIntel.AppHost.Tests/CompanyIntel.AppHost.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet tool restore
+      - name: CSharpier check
+        run: dotnet csharpier check .
+      - name: Build
+        run: dotnet build CompanyIntel.slnx -p:WarningLevel=0 /clp:ErrorsOnly

@@ -1,0 +1,1 @@
+Modus operandi - for any type of research store it in _plans including subagents.
