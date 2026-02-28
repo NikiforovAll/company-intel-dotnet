@@ -66,13 +66,6 @@ footer: ""
 | **Agent Framework** | Microsoft.Agents.AI | `IAIAgent`, AG-UI protocol |
 | **MCP** | Model Context Protocol | Tool & resource discovery |
 
-<br/>
-
-<div class="key">
-
-**Key:** Like `ILogger` or `HttpClient` — abstractions that let you swap implementations without changing app code
-
-</div>
 
 ---
 
