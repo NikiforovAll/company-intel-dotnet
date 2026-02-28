@@ -129,11 +129,11 @@ sealed class LoggingChatClient(IChatClient inner, ILogger logger)
         ChatOptions? options = null,
         CancellationToken ct = default)
     {
-        logger.LogInformation("Chat request: {Count} messages",
-            messages.Count());
+        logger.LogInformation("Chat request: {Count} messages", messages.Count());
         var response = await base.GetResponseAsync(messages, options, ct);
         logger.LogInformation("Chat response: {Tokens} tokens",
             response.Usage?.TotalTokenCount);
+
         return response;
     }
 }
@@ -198,15 +198,13 @@ public sealed class DocumentRecord
 # VectorStore — Provider Registration
 
 ```ts
-builder.Services.AddSingleton<
-    VectorStoreCollection<Guid, DocumentRecord>>(sp =>
+builder.Services.AddSingleton<VectorStoreCollection<Guid, DocumentRecord>>(sp =>
 {
-    var embedder = sp.GetRequiredService<
-        IEmbeddingGenerator<string, Embedding<float>>>();
+    var embedder = sp.GetRequiredService<IEmbeddingGenerator<string, Embedding<float>>>();
     var vectorStore = new QdrantVectorStore(
         sp.GetRequiredService<QdrantClient>(),
-        new QdrantVectorStoreOptions {
-            EmbeddingGenerator = embedder });
+        new QdrantVectorStoreOptions { EmbeddingGenerator = embedder });
+
     return vectorStore
         .GetCollection<Guid, DocumentRecord>("documents");
 });
@@ -351,8 +349,7 @@ var chatAgent = chatClient.AsAIAgent(
     new ChatClientAgentOptions
     {
         Name = "agentic_chat",
-        ChatOptions = new ChatOptions {
-            Instructions = SystemInstructions },
+        ChatOptions = new ChatOptions { Instructions = SystemInstructions },
         AIContextProviders = [
             new TextSearchProvider(searchFunc, ragOptions)
         ],
@@ -395,7 +392,7 @@ section {
 
 # AppHost — Full Stack Orchestration
 
-```csharp
+```ts
 var ollama = builder.AddOllama("ollama")
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
