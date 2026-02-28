@@ -1,0 +1,264 @@
+/* @theme copilot */
+
+@import "base";
+
+:root {
+  --marpx-theme-background-color: #FFFFFF;
+  --marpx-theme-font-family: 'Inter', 'Segoe UI', sans-serif;
+  --marpx-theme-font-color: #1A1A2E;
+  --marpx-theme-bold-color: #8B5CF6;
+  --marpx-theme-h1-color: #1A1A2E;
+  --marpx-theme-h1-bold-color: #1F6FEB;
+  --marpx-theme-h2-color: #1F6FEB;
+  --marpx-theme-marker-color: #8B5CF6;
+}
+
+/* Lead slide — EPAM title style: white bg with gradient overlay */
+section.lead {
+  background: #F5F5F5;
+  color: #1A1A2E;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 80px;
+}
+
+section.lead h1 {
+  position: relative;
+  color: #1A1A2E;
+  font-size: 56pt;
+  font-weight: 300;
+  height: auto;
+  max-width: 70%;
+  justify-content: flex-start;
+  line-height: 1.1;
+}
+
+section.lead h1 strong {
+  color: #1F6FEB;
+  font-weight: 600;
+}
+
+section.lead h2 {
+  color: #1A1A2E;
+  font-size: 22pt;
+  font-weight: 300;
+  margin-top: 24px;
+}
+
+section.lead h3 {
+  color: #1F6FEB;
+  font-size: 14pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+section.lead::after {
+  color: var(--brand-text-muted);
+}
+
+section.lead footer {
+  display: block;
+}
+
+/* Hero slide — speaker intro */
+section.hero h2 {
+  font-size: 48pt;
+  position: absolute;
+  top: 20px;
+  color: #1F6FEB;
+}
+
+section.hero li {
+  font-size: 30px;
+}
+
+section.hero p {
+  padding: 12px 0;
+  font-size: 26px;
+}
+
+/* Chapter divider slide — gradient bg with white text */
+section.chapter {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 120px;
+  background-size: cover;
+  background-position: center;
+}
+
+section.chapter h1 {
+  position: relative;
+  color: #FFFFFF;
+  font-size: 48pt;
+  font-weight: 300;
+  height: auto;
+}
+
+section.chapter h1 strong {
+  font-weight: 600;
+}
+
+section.chapter h2 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 22pt;
+  font-weight: 300;
+}
+
+section.chapter::after,
+section.chapter footer,
+section.chapter header {
+  display: none;
+}
+
+/* Purple chapter variant */
+section.chapter-purple {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 120px;
+  background-size: cover;
+  background-position: center;
+}
+
+section.chapter-purple h1 {
+  position: relative;
+  color: #FFFFFF;
+  font-size: 48pt;
+  font-weight: 300;
+  height: auto;
+}
+
+section.chapter-purple::after,
+section.chapter-purple footer,
+section.chapter-purple header {
+  display: none;
+}
+
+/* Dark surface slide */
+section.dark {
+  background: #161B22;
+  color: #FFFFFF;
+}
+
+section.dark h1 {
+  color: #FFFFFF;
+}
+
+section.dark h2 {
+  color: #1F6FEB;
+}
+
+section.dark strong {
+  color: #8B5CF6;
+}
+
+section.dark code:not(pre code) {
+  background: #30363D;
+  border-color: #484f58;
+  color: #e6edf3;
+}
+
+section.dark::after {
+  color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(22, 27, 34, 0.8);
+}
+
+/* Tip callout */
+div.tip {
+  background: rgba(26, 127, 55, 0.15);
+  border-left: 4px solid #1A7F37;
+  border-radius: 0 8px 8px 0;
+  padding: 8px 12px;
+  margin: 8px 0;
+  font-size: 20px;
+}
+div.tip p {
+  margin: 0;
+}
+
+div.tip strong {
+  color: #1A7F37 !important;
+}
+
+/* Warning callout */
+div.warning {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 4px solid #D29922;
+  border-radius: 0 8px 8px 0;
+  padding: 8px 12px;
+  margin: 8px 0;
+  font-size: 20px;
+}
+
+div.warning p {
+  margin: 0;
+}
+
+div.warning strong {
+  color: #D29922 !important;
+}
+
+/* Key takeaway box */
+div.key {
+  background: rgba(31, 111, 235, 0.08);
+  border-left: 4px solid #1F6FEB;
+  border-radius: 0 8px 8px 0;
+  padding: 8px 12px;
+  margin: 8px 0;
+  font-size: 20px;
+}
+
+div.key p {
+  margin: 0;
+}
+
+div.key strong {
+  color: #1F6FEB !important;
+}
+
+div.key h3 {
+  color: #1F6FEB;
+  margin-top: 0;
+}
+
+/* End/thank you slide */
+section.end {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+section.end h1 {
+  position: relative;
+  color: #FFFFFF;
+  font-size: 48pt;
+  font-weight: 300;
+  height: auto;
+}
+
+section.end h2 {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+
+section.end::after,
+section.end footer,
+section.end header {
+  display: none;
+}
+
+/* Mermaid diagram styling overrides for light slides */
+.mermaid {
+  text-align: center;
+}

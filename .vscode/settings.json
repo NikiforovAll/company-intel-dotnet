@@ -1,0 +1,7 @@
+{
+  "markdown.marp.html": "all",
+  "markdown.marp.themes": [
+    "./slides/themes/base.css",
+    "./slides/themes/theme.css"
+  ]
+}

@@ -1,0 +1,37 @@
+name: Deploy presentation to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Copy assets
+        run: |
+          mkdir -p build/rag-dotnet-ai-building-blocks
+          cp -R slides/img build/rag-dotnet-ai-building-blocks/img
+          cp -R slides/themes build/rag-dotnet-ai-building-blocks/themes
+      - name: Marp Build
+        uses: docker://marpteam/marp-cli:latest
+        with:
+          args: --theme-set slides/themes -o build/rag-dotnet-ai-building-blocks/index.html --html -- slides/presentation.md
+        env:
+          MARP_USER: root:root
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: 'build'
+      - uses: actions/deploy-pages@v4

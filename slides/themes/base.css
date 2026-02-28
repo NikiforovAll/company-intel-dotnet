@@ -1,0 +1,189 @@
+/*
+* @theme base
+*
+* @auto-scaling true
+* @size 16:9 1280px 720px
+* @size 4:3 960px 720px
+* @size fullHD 1920px 1080px
+*
+*/
+
+@import "default";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap");
+
+:root {
+  container-type: normal;
+
+  /* GitHub Copilot Brand Palette */
+  --brand-bg: #FFFFFF;
+  --brand-surface: #161B22;
+  --brand-border: #30363D;
+  --brand-text: #1A1A2E;
+  --brand-text-muted: #8B949E;
+  --brand-blue: #1F6FEB;
+  --brand-purple: #8B5CF6;
+  --brand-teal: #1A7F37;
+  --brand-amber: #D29922;
+  --brand-red: #F85149;
+
+  /* Theme mappings */
+  --marpx-theme-font-family: 'Inter', 'Segoe UI', sans-serif;
+  --marpx-theme-font-size: 26pt;
+  --marpx-theme-font-color: var(--brand-text);
+  --marpx-theme-background-color: var(--brand-bg);
+  --marpx-theme-color: var(--brand-blue);
+  --marpx-theme-bold-color: var(--brand-purple);
+  --marpx-theme-h1-color: var(--brand-text);
+  --marpx-theme-h1-bold-color: var(--brand-blue);
+  --marpx-theme-h2-color: var(--brand-blue);
+  --marpx-theme-marker-color: var(--brand-purple);
+  --marpx-theme-code-color: #f6f8fa;
+}
+
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+section {
+  font-weight: 400;
+  font-family: var(--marpx-theme-font-family);
+  font-size: var(--marpx-theme-font-size);
+  color: var(--marpx-theme-font-color);
+  background: #F5F5F5;
+  padding: 120px 80px 68px 80px;
+  line-height: 1.4;
+}
+
+section::after {
+  border-radius: 100px;
+  bottom: 22px;
+  color: var(--brand-text-muted);
+  content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
+  font-size: 11pt;
+  right: 50px;
+  left: auto;
+  padding: 2px 8px;
+  position: absolute;
+}
+
+h1 {
+  position: absolute;
+  top: 20px;
+  color: var(--marpx-theme-h1-color);
+  font-size: 36pt;
+  font-weight: 700;
+  height: 100px;
+  max-width: calc(100% - 160px);
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  color: var(--marpx-theme-h2-color);
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+h1 > strong, h2 > strong {
+  color: var(--marpx-theme-h1-bold-color);
+}
+
+li::marker {
+  color: var(--marpx-theme-marker-color);
+}
+
+section strong {
+  color: var(--marpx-theme-bold-color);
+}
+
+section code:not(pre code) {
+  font-family: 'Fira Code', monospace;
+  background-color: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.85em;
+  color: var(--brand-text);
+}
+
+section pre {
+  border-radius: 8px;
+  border: 1px solid var(--brand-border);
+}
+
+section blockquote {
+  border-left: 4px solid var(--brand-purple);
+  color: var(--brand-text-muted);
+  font-size: 0.9em;
+  padding: 8px 16px;
+  background: #f6f8fa;
+  border-radius: 0 6px 6px 0;
+}
+
+section a {
+  color: var(--brand-blue);
+}
+
+footer {
+  position: absolute;
+  color: var(--brand-text-muted);
+  font-size: 8pt;
+  font-weight: 400;
+  left: 50px;
+  bottom: 16px;
+}
+
+header {
+  position: absolute;
+  bottom: 29px;
+  left: 130px;
+  color: var(--brand-text-muted);
+  font-weight: 600;
+  font-size: 10pt;
+}
+
+/* Multi-column layouts */
+section > div.cols {
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+}
+
+section.cols {
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+}
+
+.cols > div {
+  flex: 1 1 0;
+}
+
+/* Table styling */
+section table {
+  font-size: 24px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+section table th {
+  background-color: var(--brand-surface);
+  color: white;
+  border-bottom: 2px solid var(--brand-blue);
+  padding: 14px 20px;
+}
+
+section table td {
+  border-bottom: 1px solid #d0d7de;
+  padding: 12px 20px;
+}
+
+section table tr:nth-child(even) {
+  background-color: #f6f8fa;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
