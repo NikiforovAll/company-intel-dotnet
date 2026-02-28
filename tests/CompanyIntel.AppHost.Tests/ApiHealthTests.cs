@@ -14,7 +14,7 @@ public class ApiHealthTests
 
         var appHost =
             await DistributedApplicationTestingBuilder.CreateAsync<Projects.CompanyIntel_AppHost>(
-                ["UseVolumes=false"],
+                ["Ephemeral=true"],
                 (appOptions, _) => appOptions.DisableDashboard = true,
                 cts.Token
             );

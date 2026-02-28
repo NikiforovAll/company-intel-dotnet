@@ -14,17 +14,40 @@ var qdrant = builder
     .WithImageTag("latest")
     .WithLifetime(ContainerLifetime.Persistent);
 
-if (
-    !string.Equals(builder.Configuration["UseVolumes"], "false", StringComparison.OrdinalIgnoreCase)
-)
+var isPersistent = !string.Equals(
+    builder.Configuration["Ephemeral"],
+    "true",
+    StringComparison.OrdinalIgnoreCase
+);
+
+string? sqlitePath = null;
+if (isPersistent)
 {
     qdrant.WithDataVolume();
+    sqlitePath = Path.Combine(builder.AppHostDirectory, "..", ".data");
+    Directory.CreateDirectory(sqlitePath);
 }
 
-builder
+var sqlite = builder
+    .AddSqlite(
+        "ingestion-db",
+        databasePath: sqlitePath,
+        databaseFileName: isPersistent ? "ingestion.db" : null
+    )
+    .WithSqliteWeb();
+
+var api = builder
     .AddProject<Projects.CompanyIntel_Api>("api")
     .WithReference(llama)
     .WithReference(embedModel)
-    .WithReference(qdrant);
+    .WithReference(qdrant)
+    .WithReference(sqlite);
+
+builder
+    .AddJavaScriptApp("ui", "../CompanyIntel.UI", "dev")
+    .WithPnpm()
+    .WithHttpEndpoint(port: 3000, env: "PORT")
+    .WithEnvironment("AGENT_URL", api.GetEndpoint("http"))
+    .WithOtlpExporter();
 
 await builder.Build().RunAsync();

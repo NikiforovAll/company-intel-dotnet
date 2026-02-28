@@ -2,4 +2,23 @@
   <ItemGroup>
     <ProjectReference Include="..\CompanyIntel.ServiceDefaults\CompanyIntel.ServiceDefaults.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Aspire.Qdrant.Client" Version="13.1.2" />
+    <PackageReference Include="CommunityToolkit.Aspire.OllamaSharp" Version="13.1.1" />
+    <PackageReference Include="Microsoft.Agents.AI" Version="1.0.0-rc2" />
+    <PackageReference Include="Microsoft.Agents.AI.Hosting" Version="1.0.0-preview.260225.1" />
+    <PackageReference
+      Include="Microsoft.Agents.AI.Hosting.AGUI.AspNetCore"
+      Version="1.0.0-preview.260225.1"
+    />
+    <PackageReference Include="Microsoft.Extensions.AI" Version="10.3.0" />
+    <PackageReference Include="Microsoft.Extensions.VectorData.Abstractions" Version="10.0.0" />
+    <PackageReference
+      Include="Microsoft.SemanticKernel.Connectors.Qdrant"
+      Version="1.72.0-preview"
+    />
+    <PackageReference Include="OllamaSharp" Version="5.4.18" />
+    <PackageReference Include="CommunityToolkit.Aspire.Microsoft.EntityFrameworkCore.Sqlite" Version="13.1.2-beta.518" />
+    <PackageReference Include="PdfPig" Version="0.1.13" />
+  </ItemGroup>
 </Project>

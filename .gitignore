@@ -251,3 +251,17 @@ appsettings.Development.Aspire.json
 
 # NuGet packages cache
 .nuget/
+
+# Next.js
+.next/
+out/
+.vercel
+
+# pnpm
+pnpm-debug.log*
+
+# Turbo
+.turbo
+
+# SQLite data
+.data/
